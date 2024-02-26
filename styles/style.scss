@@ -1,0 +1,79 @@
+
+$light-text:#312A4E;
+$dark-text:#B3B3B3;
+$b-color:rgb(243, 239, 236);
+$raleway:'Raleway';
+$stix:'STIX Two Text';
+@mixin font($family,$size,$weight,$style){
+	font-family: $family;
+	font-size:$size;
+  font-weight: $weight;
+	font-style: $style;
+  font-display: swap;}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+	background-color: $b-color;
+	width: 100vw;
+	max-width: 1440px;
+	min-width: 360px;
+	margin: 0 auto;
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+.header
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	&__title{
+	padding-top:10%;
+	@include font($stix,clamp(3.75rem, calc(2.5rem + 5.5556vw), 7.5rem),600,normal);
+	line-height: 90%;
+	text-align: center;
+	color: $light-text;
+	}
+}
+.content-section
+{
+	display: flex;
+  padding: 0 5vi;
+  flex-direction: column;
+  align-items: center;
+}
+.content
+{
+	&__title
+	{
+		padding: 7% 0 2.5% 0;
+		@include font($stix,1.875rem,600,normal);
+		color: $light-text;
+		text-align: center;
+		line-height: 90%;
+		letter-spacing: 0%;
+	}
+	&__text-block
+	{
+		@include font($raleway,1.125rem,400,normal);
+		color: $light-text;
+	}
+}
