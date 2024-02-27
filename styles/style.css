@@ -14,6 +14,16 @@
   margin: 0 auto;
 }
 
+.link {
+  font-family: "Raleway";
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  line-height: 104%;
+  color: currentColor;
+}
+
 p,
 h1,
 h2,
@@ -69,4 +79,8 @@ figure {
   font-style: normal;
   font-display: swap;
   color: #312A4E;
+}
+
+.content__text-block > .content__paragraph:not(:last-child) {
+  padding-bottom: 1.5em;
 }
