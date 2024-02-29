@@ -15,7 +15,7 @@
 }
 
 .link {
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
@@ -43,7 +43,7 @@ figure {
 }
 .header__title {
   padding-top: 10%;
-  font-family: "STIX Two Text";
+  font-family: "STIX Two Text", sans-serif;
   font-size: clamp(3.75rem, calc(2.5rem + 5.5556vw), 7.5rem);
   font-weight: 600;
   font-style: normal;
@@ -57,12 +57,11 @@ figure {
   display: flex;
   padding: 0 5vi;
   flex-direction: column;
-  align-items: center;
 }
 
 .content__title {
   padding: 7% 0 2.5% 0;
-  font-family: "STIX Two Text";
+  font-family: "STIX Two Text", sans-serif;
   font-size: 1.875rem;
   font-weight: 600;
   font-style: normal;
@@ -73,12 +72,58 @@ figure {
   letter-spacing: 0%;
 }
 .content__text-block {
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
   color: #312A4E;
+}
+.content__blockquote {
+  width: 75%;
+  padding-bottom: 1.5em;
+  margin: 0 auto;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  line-height: 200%;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #312A4E;
+}
+.content__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  color: #312A4E;
+  text-align: left;
+  list-style: none;
+}
+
+.item {
+  display: list-item;
+  position: relative;
+  padding-inline-start: 40px;
+}
+.item::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-image: url(../images/marker-light.svg);
+  left: 10px;
+  top: 3px;
+}
+.item:not(:last-child) {
+  padding-bottom: 10px;
 }
 
 .content__text-block > .content__paragraph:not(:last-child) {

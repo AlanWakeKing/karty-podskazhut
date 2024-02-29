@@ -5,11 +5,12 @@ $b-color:rgb(243, 239, 236);
 $raleway:'Raleway';
 $stix:'STIX Two Text';
 @mixin font($family,$size,$weight,$style){
-	font-family: $family;
+	font-family: $family,sans-serif;
 	font-size:$size;
   font-weight: $weight;
 	font-style: $style;
   font-display: swap;}
+	$marker:url(../images/marker-light.svg);
 
 
 
@@ -64,7 +65,6 @@ figure {
 	display: flex;
   padding: 0 5vi;
   flex-direction: column;
-  align-items: center;
 }
 .content
 {
@@ -81,6 +81,49 @@ figure {
 	{
 		@include font($raleway,1.125rem,400,normal);
 		color: $light-text;
+	}
+	&__blockquote
+	{
+		width: 75%;
+		padding-bottom:1.5em;
+		margin: 0 auto;
+		@include font($raleway,1.125rem,400,italic);
+		line-height: 200%;
+		letter-spacing: 0%;
+		text-align: left;
+		color: $light-text;
+	}
+	&__list
+	{
+		display: flex;
+		flex-direction: column;
+		justify-content:flex-start;
+		align-items: flex-start;
+		@include font($raleway,1.125rem,400,normal);
+		color: $light-text;
+		text-align: left;
+		list-style: none;
+		
+	}
+}
+.item
+{
+	display: list-item;
+	position: relative;
+	padding-inline-start: 40px;
+	&::before
+	{
+		content: "";
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		background-image: $marker;
+		left:10px;
+		top:3px;
+	}
+	&:not(:last-child)
+	{
+		padding-bottom: 10px;
 	}
 }
 .content__text-block > .content__paragraph:not(:last-child)
