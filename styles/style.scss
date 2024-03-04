@@ -2,6 +2,7 @@
 $light-text:#312A4E;
 $dark-text:#B3B3B3;
 $b-color:rgb(243, 239, 236);
+$first-b-symbol:rgb(255, 171, 107);
 $raleway:'Raleway';
 $stix:'STIX Two Text';
 @mixin font($family,$size,$weight,$style){
@@ -49,15 +50,32 @@ figure {
 }
 .header
 {
+	padding-block-start: 10%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
 	&__title{
-	padding-top:10%;
 	@include font($stix,clamp(3.75rem, calc(2.5rem + 5.5556vw), 7.5rem),600,normal);
 	line-height: 90%;
 	text-align: center;
 	color: $light-text;
+	margin-block-end:40px ;
+	}
+	&__menu
+	{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-block-start: 1px solid currentColor;
+		border-block-end: 1px solid currentColor;
+		padding-block: 20px;
+	}
+	&__theme-toggler
+	{
+		display: flex;
+		gap: 20px;
+		padding: 0;
+		list-style: none;
 	}
 }
 .content-section
@@ -85,8 +103,7 @@ figure {
 	&__blockquote
 	{
 		width: 75%;
-		padding-bottom:1.5em;
-		margin: 0 auto;
+		margin: 0 auto 1.5em;
 		@include font($raleway,1.125rem,400,italic);
 		line-height: 200%;
 		letter-spacing: 0%;
@@ -95,15 +112,90 @@ figure {
 	}
 	&__list
 	{
+		padding: 0 0 0 40px;
+		list-style: none;
+		& li
+		{
+			position: relative;
+			&:not(:last-of-type)
+			{
+				margin-block-end: 10px;
+			}
+			&::before
+			{
+				content: "";
+				position: absolute;
+				inline-size: 15px;
+				block-size: 15px;
+				margin-block-start: -7.5px;
+				background-image: $marker;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+				inset-block-start: 50%;
+				inset-inline-start: -25px;
+			}
+		}		
+	}
+	&__text-block_type_first-lettered .content__paragraph:first-of-type:first-letter{
+	display: inline-block;
+	background-color: $first-b-symbol;
+	padding: 0 4px;
+	margin-inline-end: 1px;
+	@include font($raleway,1.875rem,700,normal)
+	}
+	&__figure
+	{
+		position: relative;
+		inline-size: calc(100% + 10vi);
+		margin: 7% auto;
+		inset-inline-end: 5vi;
+	}
+	&__picture
+	{
+		inline-size: 100%;
+		&-caption
+		{
+			border-block-end: 1px solid currentColor;
+			padding: 20px;
+			@include font($raleway,1.125rem,400,normal);
+			text-align: center;
+		}
+	}
+	&__card
+	{
 		display: flex;
 		flex-direction: column;
-		justify-content:flex-start;
-		align-items: flex-start;
-		@include font($raleway,1.125rem,400,normal);
+		justify-content: center;
+		align-items: center;
+		margin-block-start: 7%;
+		border: 1px solid currentColor;
+		aspect-ratio: 4/3;
 		color: $light-text;
-		text-align: left;
-		list-style: none;
-		
+		&-title
+		{
+			font-size:3.75rem ;
+		}
+		&-subtitle
+		{
+			font-size: 1.125rem;
+		}
+	}	
+}
+.colored-text
+{
+	position: relative;
+	display: inline-block;
+	&::after
+	{
+		content: "";
+		position: absolute;
+		z-index: -1;
+		inline-size: calc(100% + 8px);
+		block-size: 0.5ch;
+		background-color:$first-b-symbol;
+		inset-block-end: 0.3ch;
+		inset-inline-start: -4px;
 	}
 }
 .item
@@ -111,22 +203,8 @@ figure {
 	display: list-item;
 	position: relative;
 	padding-inline-start: 40px;
-	&::before
-	{
-		content: "";
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		background-image: $marker;
-		left:10px;
-		top:3px;
-	}
-	&:not(:last-child)
-	{
-		padding-bottom: 10px;
-	}
 }
-.content__text-block > .content__paragraph:not(:last-child)
+.content__text-block .content__paragraph:not(:last-child)
 {
-	padding-bottom: 1.5em;
+	margin-block-end: 1.5em;
 }

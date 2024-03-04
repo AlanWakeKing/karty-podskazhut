@@ -14,17 +14,32 @@
   <body class="page theme_dark">
     <header class="header">
       <h1 class="header__title">Карты подскажут</h1>
-      <!-- <nav class="header__menu">
-				 <img src="./images/logo.svg" alt="" class="logo">
-				<ul class="menu__list">
-					<li class="list__item"></li>
-					<li class="list__item"></li>
-				</ul>
-			</nav> -->
+      <nav class="header__menu">
+        <div class="header__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="135" height="135">
+            <use href="./images/logo.svg#logo"></use>
+          </svg>
+        </div>
+        <ul class="header__theme-toggler">
+          <li>
+            <button class="header__theme-button header__theme-button_type_dark">
+              Темная
+            </button>
+          </li>
+          <li>
+            <button
+						disabled
+              class="header__theme-button header__theme-button_type_light header__theme-button_is-active"
+            >
+              Светлая
+            </button>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main class="content content-section">
       <h2 class="content__title">Креативный подход к решению проблем</h2>
-      <div class="content__text-block">
+      <div class="content__text-block content__text-block_type_first-lettered">
         <p class="content__paragraph">
           Творческие кризисы, кажется, рано или поздно испытывает любой человек.
           Часто бывает так, что вы сталкиваетесь с проблемой, не можете решить
@@ -39,7 +54,7 @@
         </p>
       </div>
       <h2 class="content__title">Что это за колода</h2>
-      <div class="content__text-block">
+      <div class="content__text-block content__text-block_type_first-lettered">
         <p class="content__paragraph">
           Тут могло бы быть что-то про пользу игры в «Дурака» или о высших
           арканах Таро, но у нас на примете другая колода. Она называется
@@ -47,6 +62,28 @@
           году создали композитор, музыкальный продюсер и один из основателей
           жанра эмбиент Брайан Ино и мультимедиа-художник Питер Шмидт.
         </p>
+        <figure class="content__figure">
+          <picture>
+            <source
+              srcset="./images/cards-1x.avif 1x, ./images/cards-2x.avif 2x"
+              type="image/avif"
+            />
+            <source
+              srcset="./images/cards-1x.webp 1x, ./images/cards-2x.webp 2x"
+              type="image/avif"
+            />
+            <img
+              loading="lazy"
+              src="./images/cards-1x.png 1x,./images/card-2x.png 2x"
+              alt="Колода Oblique Strategies на деревянном столе в окружении смартфона,ручки,записной книжки,ручки и цветка"
+              class="content__picture"
+            />
+          </picture>
+
+          <figcaption class="content__picture-caption">
+            Колода Oblique Strategies
+          </figcaption>
+        </figure>
         <p class="content__paragraph">
           Oblique Strategies в основном используют музыканты, но колода подходит
           для преодоления творческого кризиса в любой сфере. Её рекомендуют
@@ -62,7 +99,7 @@
         </p>
       </div>
       <h2 class="content__title">Как работают «обходные стратегии»</h2>
-      <div class="content__text-block">
+      <div class="content__text-block content__text-block_type_first-lettered">
         <p class="content__paragraph">
           Вот что сам Брайан Ино рассказывает о создании Oblique Strategies:
         </p>
@@ -98,15 +135,22 @@
           >.
         </p>
       </div>
+      <article class="content__card">
+        <h3 class="content__card-title heading">
+          Use an <span class="colored-text">old idea</span>
+        </h3>
+        <p class="content__card-subtitle">Воспользуйтесь старой идеей</p>
+      </article>
+
       <h2 class="content__title">Кто пользовался Oblique Strategies</h2>
-      <div class="content__text-block">
-				<ul class="content__list">
-					<li class="item">Дэвид Боуи во время записи Берлинской трилогии;</li>
-					<li class="item">Talking Heads и Дэвид Бирн в сольной карьере;</li>
-					<li class="item">Coldplay;</li>
-					<li class="item">MGMT.</li>
-				</ul>
-			</div>
+      <div class="content__text-block content__text-block_type_first-lettered">
+        <ul class="content__list">
+          <li class="item">Дэвид Боуи во время записи Берлинской трилогии;</li>
+          <li class="item">Talking Heads и Дэвид Бирн в сольной карьере;</li>
+          <li class="item">Coldplay;</li>
+          <li class="item">MGMT.</li>
+        </ul>
+      </div>
     </main>
     <footer class="footer"></footer>
 
